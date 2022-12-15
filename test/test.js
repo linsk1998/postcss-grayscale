@@ -10,7 +10,7 @@ var read = function(path) {
 var testString = function(input, output, opts) {
 	var result = postcss(plugin(opts)).process(input).css;
 	// console.log(result);
-	expect(result.replace(/\s/g,"")).to.eql(output.replace(/\s/g,""));
+	expect(result.replace(/\s/g, "")).to.eql(output.replace(/\s/g, ""));
 };
 var test = function(name, opts) {
 	var input = read('test/fixtures/' + name + '.css');
@@ -20,6 +20,15 @@ var test = function(name, opts) {
 describe('postcss-grayscale', function() {
 	it('BT.709', function() {
 		test('BT.709');
+	});
+	it('HSL', function() {
+		test('HSL', { type: 'HSL' });
+	});
+	it('Lab', function() {
+		test('Lab', { type: 'Lab' });
+	});
+	it('gamma=2.2', function() {
+		test('gamma', { type: 'gamma=2.2' });
 	});
 	it('ie', function() {
 		test('ie');

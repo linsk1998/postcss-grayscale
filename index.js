@@ -68,7 +68,7 @@ module.exports = function(opts) {
 										return false;
 								}
 						}
-					} catch (e) {}
+					} catch (e) { }
 					return true;
 				}
 			});
@@ -83,13 +83,24 @@ module.exports.postcss = true;
 
 function grayscale(type, color) {
 	switch (type) {
+		case "gamma=2.2":
+			return lightnessToColor(
+				(
+					(
+						(color.red() / 255) ** 2.5 +
+						(1.5 * color.green() / 255) ** 2.2 +
+						(.6 * color.blue() / 255) ** 2.2
+					) /
+					(1 + 1.5 ** 2.2 + 0.6 ** 2.2)
+				) ** (1 / 2.2)
+			);
 		case "HSI":
 			return lightnessToColor((color.red() + color.green() + color.blue()) / 3);
 		case "HSL":
-			return lightnessToColor(color.lightness());
+			return lightnessToColor(color.lightness() / 100);
 		case "Lab":
 		case "Lch":
-			return lightnessToColor(color.l());
+			return lightnessToColor(color.l() / 100);
 		case 'BT.601':
 		case 'BT601':
 		case 'YUV':
