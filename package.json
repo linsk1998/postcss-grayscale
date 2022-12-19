@@ -1,6 +1,6 @@
 {
 	"name": "postcss-grayscale",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "PostCSS plugin to transform color to grayscale",
 	"main": "index.js",
 	"scripts": {
@@ -11,10 +11,10 @@
 		"url": "git+https://github.com/linsk1998/postcss-grayscale.git"
 	},
 	"keywords": [
-		"postcss",
-		"background",
-		"rgba",
-		"alpha"
+		"postcss-plugin",
+		"grayscale",
+		"gray",
+		"grey"
 	],
 	"author": "linsk",
 	"license": "MIT",

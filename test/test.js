@@ -24,6 +24,9 @@ describe('postcss-grayscale', function() {
 	it('HSL', function() {
 		test('HSL', { type: 'HSL' });
 	});
+	it('HSI', function() {
+		test('HSI', { type: 'HSI' });
+	});
 	it('Lab', function() {
 		test('Lab', { type: 'Lab' });
 	});

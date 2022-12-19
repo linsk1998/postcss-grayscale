@@ -95,7 +95,7 @@ function grayscale(type, color) {
 				) ** (1 / 2.2)
 			);
 		case "HSI":
-			return lightnessToColor((color.red() + color.green() + color.blue()) / 3);
+			return lightnessToColor((color.red() + color.green() + color.blue()) / 255 / 3);
 		case "HSL":
 			return lightnessToColor(color.lightness() / 100);
 		case "Lab":
